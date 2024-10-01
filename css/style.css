@@ -13,63 +13,50 @@ html, body{
 
 body{
     flex: 1;
-    min-height: 120vh;
+    min-height: 100vh;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
+
+   
+    
 }
 
 /* Start of background circles style */
-.circle-overall-container{
+.circle-background {
     position: absolute;
-    z-index: 0;
-    width: 100%;
-    min-height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
-
-.circle-overall-container {
-    position: absolute; 
-    width: 100%; 
-    height: 100%;
-    top: 40vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle-container {
-    position: relative;
-    width: 85vw;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translate(-50%, -50%); /* Center the circles */
+    z-index: -1; /* Keep circles behind the content */
+    background: red;
 }
 
 .circle {
     position: absolute;
-    border-radius: 50%;
-    border: 5px solid #FFF4F6;
+    border-radius: 50%; /* Ensure circles are perfectly round */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
- .outer-circle{
-    width: 80vw; 
-    height: 80vw; 
+.outer-circle {
+    width: 135vmin; /* 80% of the smaller side of the viewport (vmin ensures circle stays round) */
+    height: 135vmin; /* Use the same unit for width and height */
+    border: 5px solid #FFDBE2;; /* Outer circle border */
 }
 
-.middle-circle{
-    width: 70vw;
-    height: 70vw;
+.middle-circle {
+    width: 110vmin; /* Smaller than the outer circle */
+    height: 110vmin; /* Same value for height */
+    border: 5px solid #FFDBE2; /* Middle circle border */
 }
 
-.inner-circle{
-    width: 60vw;
-    height: 60vw;
-} 
+.inner-circle {
+    width: 80vmin; /* Smaller than the middle circle */
+    height: 80vmin; /* Same value for height */
+    border: 5px solid #FFDBE2; /* Inner circle border */
+}
+
+
 /* End of Background Circle Style */
 
 /* Start of Header Style */
@@ -78,7 +65,6 @@ header{
     position: absolute;
     top: 0;
     height: 100px;
-    background: transparent;
     z-index: 40;
 }
 
@@ -105,19 +91,14 @@ header img{
     position: relative;
     z-index: 10;
     padding-top: 120px;
-    flex-grow: 1;
-}
-
-.body-container::after {
-    content: "";
-    display: table;
-    clear: both;
+    flex: 1;
 }
 
 .body-container .body-container-inner{
     width: 85%;
     margin: 0 auto;
     text-align: center;
+
 }
 
 .body-container .body-container-inner h1{
@@ -199,7 +180,8 @@ header img{
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
+    background-color: transparent;
 }
 
 .images .image{
@@ -212,7 +194,7 @@ header img{
     border: 5px solid #750015;
     justify-content: center; 
     align-items: center; 
-    background-color: #ddd; 
+    background-color: #fff; 
 }
 
 .images .image img{
@@ -232,20 +214,20 @@ header img{
 }
 
 .images .middle {
-    margin-top: 100px; 
+    margin-top: 200px; 
     border: 5px solid #FFDBE2;
 }
 
 footer{
-    width: 100%;
-    height: 50px;
+    background-color: transparent;
+    color: #000;
     text-align: left;
-    line-height: 50px;
-    padding-left: 60px;
-    font-size: 1.1rem;
+    padding: 10px;
+    width: 100%;
     position: relative;
-    z-index: 1;
-    margin-top: auto;
+    bottom: 0;
+    padding-left: 60px;
+    left: 0;
 }
 /* End of Body Style */
 
@@ -273,6 +255,9 @@ footer{
     }
 }
 
+@media (max-width: 1000px){
+
+}
 
 @media (max-width: 950px) {
     .input-container {
@@ -284,7 +269,23 @@ footer{
     .body-container .body-container-inner p{
         font-size: 20px;
     }
+
+    .outer-circle {
+        width: 100vmin; /* 80% of the smaller side of the viewport (vmin ensures circle stays round) */
+        height: 100vmin; /* Use the same unit for width and height */
+    }
+    
+    .middle-circle {
+        width: 80vmin; /* Smaller than the outer circle */
+        height: 80vmin; /* Same value for height */
+    }
+    
+    .inner-circle {
+        width: 70vmin; /* Smaller than the middle circle */
+        height: 70vmin; /* Same value for height */
+    }
 }
+
 
 @media (max-width: 750px) {
     .body-container .body-container-inner{
@@ -297,6 +298,21 @@ footer{
 
     .body-container .body-container-inner h3{
         font-size: 2.5rem;
+    }
+
+    .outer-circle {
+        width: 80vmin;
+        height: 80vmin;
+    }
+    
+    .middle-circle {
+        width: 60vmin; 
+        height: 60vmin; 
+    }
+    
+    .inner-circle {
+        width: 40vmin; 
+        height: 40vmin; 
     }
 }
 
@@ -314,6 +330,14 @@ footer{
         font-size: 2rem;
     }
 
+    .images .middle {
+        margin-top: 100px; 
+    }
+
+    .images{
+        margin-bottom: 100px;
+    }
+
     .text-input {
         font-size: 0.8rem;
         padding: 25px 5px;
@@ -327,11 +351,6 @@ footer{
     .body-container .body-container-inner p{
         font-size: 18px;
     }  
-
-    .images .image{
-        width: 30vw; 
-        height: 30vw; 
-    }
 }
 
 @media (max-width: 450px) {
