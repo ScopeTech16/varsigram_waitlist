@@ -13,61 +13,48 @@ html, body{
 
 body{
     flex: 1;
-    min-height: 100vh;
+    min-height: 120vh;
     display: flex;
     flex-direction: column;
 }
 
 /* Start of background circles style */
 .circle-overall-container{
-    /* position: absolute;
-    z-index: 0;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding-top: 320px;
-    margin: 0 auto; */
-
     position: absolute;
     z-index: 0;
     width: 100%;
-    min-height: 100%; /* Full viewport height */
+    min-height: 100%;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-
-
-    
+    align-items: center;    
 }
 
 .circle-overall-container {
-    position: absolute; /* Make it absolute to position it freely */
-    width: 100%; /* Full width of the viewport */
-    height: 100%; /* Full height of the viewport */
-    top: 40vh; /* Start circles slightly below the viewport */
+    position: absolute; 
+    width: 100%; 
+    height: 100%;
+    top: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .circle-container {
-    position: relative; /* Relative for child absolute positioning */
-    width: 85vw; /* 85% of viewport width */
-    height: 85vh; /* 85% of viewport height */
+    position: relative;
+    width: 85vw;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .circle {
-    position: absolute; /* Allow for overlapping circles */
+    position: absolute;
     border-radius: 50%;
     border: 5px solid #FFF4F6;
 }
-
 
  .outer-circle{
     width: 80vw; 
@@ -105,8 +92,8 @@ header .logo-container{
 }
 
 header img{
-    width: 236px;
-    height: 45px;
+    width: 187px;
+    height: 36px;
 }
 /* End of header style */
 
@@ -119,6 +106,12 @@ header img{
     z-index: 10;
     padding-top: 120px;
     flex-grow: 1;
+}
+
+.body-container::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .body-container .body-container-inner{
@@ -137,7 +130,7 @@ header img{
     position: relative;
     margin-top: 15px;
     display: inline-block;
-    transition: transform 0.5s; /* Smooth movement */
+    transition: transform 0.5s; 
 }
 
 .body-container .body-container-inner h3{
@@ -146,11 +139,11 @@ header img{
 }
 
 .word {
-    display: none; /* Initially hide all words */
+    display: none; 
 }
 
 .visible {
-    display: inline; /* Show only the current word */
+    display: inline;
 }
 
 .body-container .body-container-inner p{
@@ -159,18 +152,11 @@ header img{
     color: #000;
 }
 
-
-
-
-
-
-
-
 /* Container for the input and button */
 .input-container {
     position: relative;
     width: 70%; 
-    margin: 35px auto; /* Centering */
+    margin: 35px auto;
 }
 
 /* Text input */
@@ -181,7 +167,7 @@ header img{
     background: #FFDBE2;
     border: none;
     color:#B0B0B0;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
     outline: none;
 }
 
@@ -189,13 +175,13 @@ header img{
 .submit-button {
     position: absolute;
     top: 50%;
-    right: 10px; /* Position to the right inside the input */
+    right: 10px; 
     transform: translateY(-50%);
     padding: 25px 20px;
     background-color: #750015;
     color: white;
     border: none;
-    border-radius: 4px; /* Match the input's rounded corners */
+    border-radius: 4px;
     cursor: pointer;
     font-size: 1.6rem;
 }
@@ -223,7 +209,7 @@ header img{
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    border: 5px sold #750015;
+    border: 5px solid #750015;
     justify-content: center; 
     align-items: center; 
     background-color: #ddd; 
@@ -251,7 +237,6 @@ header img{
 }
 
 footer{
-    color: #000;
     width: 100%;
     height: 50px;
     text-align: left;
@@ -259,11 +244,9 @@ footer{
     padding-left: 60px;
     font-size: 1.1rem;
     position: relative;
-    z-index: 15px;
+    z-index: 1;
+    margin-top: auto;
 }
-
-
-
 /* End of Body Style */
 
 
@@ -292,12 +275,6 @@ footer{
 
 
 @media (max-width: 950px) {
-   .images .image{
-        height: 250px;
-        width: 250px;
-        border-radius: 50%;
-    }
-
     .input-container {
         position: relative;
         width: 90%; 
@@ -321,12 +298,6 @@ footer{
     .body-container .body-container-inner h3{
         font-size: 2.5rem;
     }
-
-    .images .image{
-        width: 30vw; /* Circle width */
-        height: 30vw; /* Circle height */
-    }
-    
 }
 
 @media (max-width: 580px) {
@@ -334,12 +305,7 @@ footer{
         width: 157px;
         height: 30px;
     }
-
-    .images .middle {
-        margin-top: 75px; 
-    }
-
-       
+   
     .body-container .body-container-inner h1{
         font-size: 2rem;
     }
@@ -353,19 +319,19 @@ footer{
         padding: 25px 5px;
     }
 
-
-
     .submit-button {
         padding: 10px 10px;
-        font-size: 1rem;
-       
+        font-size: 1rem;   
     }
 
     .body-container .body-container-inner p{
         font-size: 18px;
-    } 
+    }  
 
-    
+    .images .image{
+        width: 30vw; 
+        height: 30vw; 
+    }
 }
 
 @media (max-width: 450px) {
@@ -377,8 +343,16 @@ footer{
         font-size: 1.5rem;
     }
 
+    .images .image{
+        border-width: 3px;
+    }
+
     footer{
         padding-left: 20px;
         font-size: 0.8rem;
+    }
+
+    .images .middle {
+        margin-top: 80px;
     }
 } 
