@@ -25,35 +25,32 @@ body{
 /* Start of background circles style */
 .circle-background {
     position: absolute;
-    transform: translate(-50%, -50%); /* Center the circles */
-    z-index: -1; /* Keep circles behind the content */
-    background: red;
+    transform: translate(-50%, -50%); 
+    z-index: -1; 
 }
 
 .circle {
     position: absolute;
-    border-radius: 50%; /* Ensure circles are perfectly round */
+    border-radius: 50%; 
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 5px solid #FFF4F6;
 }
 
 .outer-circle {
-    width: 135vmin; /* 80% of the smaller side of the viewport (vmin ensures circle stays round) */
-    height: 135vmin; /* Use the same unit for width and height */
-    border: 5px solid #FFDBE2;; /* Outer circle border */
+    width: 135vmin;
+    height: 135vmin;
 }
 
 .middle-circle {
-    width: 110vmin; /* Smaller than the outer circle */
-    height: 110vmin; /* Same value for height */
-    border: 5px solid #FFDBE2; /* Middle circle border */
+    width: 110vmin;
+    height: 110vmin;
 }
 
 .inner-circle {
-    width: 80vmin; /* Smaller than the middle circle */
-    height: 80vmin; /* Same value for height */
-    border: 5px solid #FFDBE2; /* Inner circle border */
+    width: 80vmin; 
+    height: 80vmin;
 }
 
 
@@ -255,10 +252,6 @@ footer{
     }
 }
 
-@media (max-width: 1000px){
-
-}
-
 @media (max-width: 950px) {
     .input-container {
         position: relative;
@@ -270,20 +263,20 @@ footer{
         font-size: 20px;
     }
 
-    .outer-circle {
-        width: 100vmin; /* 80% of the smaller side of the viewport (vmin ensures circle stays round) */
-        height: 100vmin; /* Use the same unit for width and height */
+    /* .outer-circle {
+        width: 100vmin;
+        height: 100vmin;
     }
     
     .middle-circle {
-        width: 80vmin; /* Smaller than the outer circle */
-        height: 80vmin; /* Same value for height */
+        width: 80vmin;
+        height: 80vmin; 
     }
     
     .inner-circle {
-        width: 70vmin; /* Smaller than the middle circle */
-        height: 70vmin; /* Same value for height */
-    }
+        width: 70vmin;
+        height: 70vmin;
+    } */
 }
 
 
@@ -300,7 +293,7 @@ footer{
         font-size: 2.5rem;
     }
 
-    .outer-circle {
+    /* .outer-circle {
         width: 80vmin;
         height: 80vmin;
     }
@@ -313,7 +306,7 @@ footer{
     .inner-circle {
         width: 40vmin; 
         height: 40vmin; 
-    }
+    } */
 }
 
 @media (max-width: 580px) {
@@ -351,6 +344,10 @@ footer{
     .body-container .body-container-inner p{
         font-size: 18px;
     }  
+
+    .circle {
+        border: 3px solid #FFDBE2;
+    }
 }
 
 @media (max-width: 450px) {
