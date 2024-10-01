@@ -16,17 +16,12 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: flex-start;
-    flex-direction: column;
-
-   
-    
+    flex-direction: column;   
 }
 
 /* Start of background circles style */
-.circle-background {
-    position: absolute;
-    transform: translate(-50%, -50%); 
-    z-index: -1; 
+.circle-overall-container{
+    overflow: hidden;
 }
 
 .circle {
@@ -36,6 +31,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     border: 5px solid #FFF4F6;
+    overflow: hidden;
 }
 
 .outer-circle {
@@ -219,7 +215,8 @@ footer{
     background-color: transparent;
     color: #000;
     text-align: left;
-    padding: 10px;
+    height: 60px;
+    line-height: 60px;
     width: 100%;
     position: relative;
     bottom: 0;
@@ -293,7 +290,7 @@ footer{
         font-size: 2.5rem;
     }
 
-    /* .outer-circle {
+    .outer-circle {
         width: 80vmin;
         height: 80vmin;
     }
@@ -306,7 +303,7 @@ footer{
     .inner-circle {
         width: 40vmin; 
         height: 40vmin; 
-    } */
+    }
 }
 
 @media (max-width: 580px) {
